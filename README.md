@@ -13,13 +13,14 @@ It is nicer and cleaner if we create a Creater class which has a creater method 
 We can use this class multiple times and we don't reapeat ourselves.
 To do it we need a common ancestor of the classes.
 
-##Example
-For example we have to create ducks, dogs, snakes. Their common ancestor can be the Animal.
+## Example
+We have ducks, dogs, snakes classes. Their common ancestor can be Animal.
 We create an IAnimal interface as a contract:
-interface IAnimal
-{
-	void Moving();
-}
+
+	interface IAnimal
+	{
+		void Moving();
+	}
 
 The ducks, dogs and snakes derive from this common interface.
 class Dog : IAnimal
