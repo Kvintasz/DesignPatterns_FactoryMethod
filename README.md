@@ -1,5 +1,5 @@
 # DesignPatterns_FactoryMethod
-Factory method is one of the creational design patterns. With this pattern we can instantiate objects.
+Factory method is one of the [creational design patterns](https://en.wikipedia.org/wiki/Creational_pattern). With this pattern we can instantiate objects.
 
 ## When should we use Factory Method?
 You should consider to use factory method when you answer yes for each of the following questions:
