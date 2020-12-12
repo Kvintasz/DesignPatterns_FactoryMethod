@@ -7,12 +7,13 @@ You should consider to use factory method when you answer yes for each of the fo
 * Do we have more similare classes belongs to the same set (like cars, animals, toys, asteroids etc)?
 * Do we have to instantiate one of them in run time but before runtime we don't know which of them?
 
-We need a logic which will be responsable for the creation and this logic will give the instante to the main program.
+We need a logic which will be responsable for the creation and this logic will give an instante of the desireable class to the caller.
 We can write this logic into the main program but in this case we cannot use this logic again in another part of our logic. Unless we copy-paste it.
 It is nicer and cleaner if we create a Creater class which has a creater method and this method gives back the instance.
 We can use this class multiple times and we don't reapeat ourselves.
 To do it we need a common ancestor of the classes.
 
+##Example
 For example we have to create ducks, dogs, snakes. Their common ancestor can be the Animal.
 We create an IAnimal interface as a contract:
 interface IAnimal
