@@ -57,10 +57,10 @@ And now we have to create the creator/factory class and its interface
 
 	class AnimalFactory
 	{
-		Random random = New Random()
+		Random random = New Random();
 		IAnimal CreateAnimal()
 		{
-			int number = random.Next(1, 100);
+			int number = random.Next(1, 100); //In this implementation we randomly create one kind of animal
 			if(number % 5 == 0) return new Dog();
 			if(number % 2 == 0) return new Duck();
 			return new Snake();
@@ -73,6 +73,7 @@ In the main program:
 	{
 		private IAnimalFactory animalFactory;
 
+		//Constructor for the dependency injection
 		MainProgram(IAnimalFactory animalFactoryIn)
 		{
 			animalFactory = animalFactoryIn
