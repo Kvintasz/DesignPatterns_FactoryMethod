@@ -7,10 +7,10 @@ You should consider to use factory method when you answer yes for each of the fo
 * Do we have more similare classes belongs to the same set (like cars, animals, toys, asteroids etc)?
 * Do we have to instantiate one of them in run time but before runtime we don't know which of them?
 
-We need a logic which will be responsable for the creation and this logic will give an instante of the desireable class to the caller.
+We need a logic which will be responsable for the creation and this logic will give an instance of the desireable class to the caller.
 We can write this logic into the main program but in this case we cannot use this logic again in another part of our logic. Unless we copy-paste it.
-It is nicer and cleaner if we create a Creater class which has a creater method and this method gives back the instance.
-We can use this class multiple times and we don't reapeat ourselves.
+It is nicer and cleaner if we create a "Creater" class which has a creater method and this method gives back the instance.
+We can use this class multiple times and we [don't reapeat ourselves](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
 To do it we need a common ancestor of the classes.
 
 ## Example
@@ -22,7 +22,7 @@ We create an IAnimal interface as a contract:
 		void Moving();
 	}
 
-The ducks, dogs and snakes derive from this common interface.
+The ducks, dogs and snakes derive from this common interface and implement it.
 
 	class Dog : IAnimal
 	{
@@ -90,3 +90,5 @@ In the main program:
 			.
 		}
 	}
+
+Why do we create an interface for the factoy class? Because in this case we can use [dependency injection](https://en.wikipedia.org/wiki/Dependency_injection) and we comply to the [D(ependency Inversion)](https://en.wikipedia.org/wiki/Dependency_inversion_principle) of the [SOLID](https://en.wikipedia.org/wiki/SOLID) principles and we can create unit test for the MainProgram with a mocked factory class.
