@@ -1,4 +1,4 @@
-# DesignPatterns_FactoryMethod
+# Factory Method
 [Factory method](https://en.wikipedia.org/wiki/Factory_method_pattern) is one of the [creational design patterns](https://en.wikipedia.org/wiki/Creational_pattern). With this pattern we can instantiate objects.
 
 ## When should we use Factory Method?
