@@ -5,7 +5,7 @@
 You should consider to use factory method when you answer yes for each of the following questions:
 
 * Do we have more similare classes belongs to the same set (like cars, animals, toys, asteroids etc)?
-* Do we have to instantiate one of them in run time but before runtime we don't know which of them?
+* Do we have to instantiate one of them in run time but before running we don't know which of them?
 
 We need a logic which will be responsable for the creation and this logic will give an instance of the desireable class to the caller.
 We can write this logic into the main program but in this case we cannot use this logic again in another part of our logic. Unless we copy-paste it.
