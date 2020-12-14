@@ -9,5 +9,6 @@ namespace FactoryPattern_Asteroids.Asteroids
         Task MoveTask { get; }
         Position Position { get; }
         List<IAsteroid> Children { get; }
+        int Extent { get; }
     }
 }

@@ -17,10 +17,10 @@ These objects are the following:
 ### My solution
 
 We can see that the different asteroids have the following traits
-- Position
-- Extent
 - Move
-- ExhaleAsteroids
+- Position
+- Children (exhaled smaller asteroids)
+- Extent
 
 Based on this knowledge we can create the common interface: **IAsteroid**
 
@@ -29,6 +29,7 @@ Based on this knowledge we can create the common interface: **IAsteroid**
         Task MoveTask { get; }
         Position Position { get; }
         List<IAsteroid> Children { get; }
+        int Extent { get; }
 	}
 
 We can implement this interface in six different way, but we can see they are very similar to each other just tiny differences are between the implementations.
