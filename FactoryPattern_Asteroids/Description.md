@@ -33,7 +33,7 @@ Based on this knowledge we can create the common interface: **IAsteroid**
 	}
 
 We can implement this interface in six different way, but we can see they are very similar to each other just tiny differences are between the implementations.
-Beacuse of these tiny differences I would create an abstract ancestor
+Beacuse of these tiny differences I would create an abstract ancestor. In this way we don't repeat ourselves.
 
 	public class AbstractAsteroid : IAsteroid
 	{
@@ -45,13 +45,15 @@ Beacuse of these tiny differences I would create an abstract ancestor
 
         public AbstractAsteroid(Position positionIn, int paceIn = 100)
         {
-            :
+            .
+            .
 			.
         }
 
         public void Move()
         {
-            :
+            .
+            .
 			.
         }
 
@@ -62,14 +64,16 @@ Beacuse of these tiny differences I would create an abstract ancestor
 
         internal virtual void CalculateAndSetNextPosition()
         {
-            :
+            .
+            .
 			.
         }
 
         internal void Exhale()
         {
-            :
+            .
 			.
+            .
         }
 
         private int horizontalDirection;
@@ -77,14 +81,14 @@ Beacuse of these tiny differences I would create an abstract ancestor
 
         private void SetDirection()
         {
-            :
+            .
+            .
 			.
         }
 	}
 
-The final implementation derive from the AbstractAsteroid and override some part of it
-
-Because the AbstractAsteroid perfectly appropiate for this class we only have to create an empty constructor
+The final implementation derives from the AbstractAsteroid and override some part of it.
+Because the AbstractAsteroid perfectly defines everything for StraitMovingAsteroid class so we only have to create an empty constructor.
 
 	public class StraitMovingAsteroid : AbstractAsteroid
     {
@@ -95,7 +99,7 @@ Because the AbstractAsteroid perfectly appropiate for this class we only have to
         }
     }
 
-The situation is same with this class. The difference is this class starts a new task with the exhale method
+The situation is really similar with StraitMovingExhaleAsteroid class. The difference is this class starts a new task with the exhale method
 
 	public class StraitMovingExhaleAsteroid : AbstractAsteroid
     {
@@ -122,7 +126,8 @@ I override the CalculateAndSetNextPosition() method and we have to perform some 
 
         internal override void CalculateAndSetNextPosition()
         {
-            :
+            .
+            .
             .
         }
 
@@ -131,7 +136,7 @@ I override the CalculateAndSetNextPosition() method and we have to perform some 
         private int spiralRadius;
     }
 
-The exhaling version is same as the previous but it starts the exhaling task.
+The SpirallyMovingExhaleAsteroid class is same as the previous but it starts the exhaling task.
 
     public class SpirallyMovingExhaleAsteroid : SpirallyMovingAsteroid
     {
@@ -142,7 +147,7 @@ The exhaling version is same as the previous but it starts the exhaling task.
         }
     }
 
-We have to override the next position method again
+We have to override the next position method for the RandomlyMovingAsteroid class as well.
 
 	public class RandomlyMovingAsteroid : AbstractAsteroid
     {
@@ -153,7 +158,8 @@ We have to override the next position method again
 
         internal override void CalculateAndSetNextPosition()
         {
-            :
+            .
+            .
             .
         }
     }
@@ -169,17 +175,8 @@ And the exhaling version won't surprise you
         }
     }
 
-No we have the six different asteroid class. Let's create the factory interface and its implementation plus an enum for the asteroid implementations.
-
-    public enum TypeOfAsteroid
-	{
-		StraitMovingAsteroid,
-		StraitMovingExhaleAsteroid,
-		SpirallyMovingAsteroid,
-		SpirallyMovingExhaleAsteroid,
-		RandomlyMovingAsteroid,
-		RandomlyMovingExhaleAsteroid
-	}
+No we have the six different asteroid class.
+Let's create the factory interface and its implementation.
 
 	public interface IAsteroidFactory
     {
@@ -187,6 +184,7 @@ No we have the six different asteroid class. Let's create the factory interface 
     }
 
 The parameter for those case when the caller wants to change the speed of the asteroid.
+I created an enum for the implementation and I will use it when I drawing the creatable asteroid.
 
 	public enum TypeOfAsteroid
 	{
